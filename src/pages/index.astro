@@ -1,11 +1,74 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import FAQ from "../components/FAQ.astro";
+import Features from "../components/Features.astro";
+import Pricing from "../components/Pricing.astro";
+import Start from "../components/Start.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>iGenda - Sua agenda inteligente</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <script src="/src/scripts/scroll.js" defer></script>
+  </head>
+
+  <body class="text-gray-200 bg-[#171c24]">
+
+    <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-6xl z-50">
+      <nav class="bg-[#171c24] border border-transparent rounded-2xl shadow-2xl backdrop-blur-sm bg-opacity-95 px-6 py-4 flex justify-between items-center">
+        <!-- Logotipo AGENDEI -->
+        <a href="#home" class="flex items-center no-after-effect"> 
+          <img src="/LogoiGendaNew.png" alt="Logo iGenda" class="h-12 w-auto" />
+          <!-- <h1 class="text-2xl font-bold text-emerald-800">iGenda</h1> -->
+        </a>
+        
+        <!-- Links de Navegação -->
+        <ul class="flex space-x-8 text-sm font-medium text-gray-400">
+          <li><a href="#apresentacao" class="scroll-link hover:text-emerald-500 transition-colors">Funcionalidades</a></li>
+          <li><a href="#precos" class="scroll-link hover:text-emerald-500 transition-colors">Planos</a></li>
+          <li><a href="#faq" class="scroll-link hover:text-emerald-500 transition-colors">Dúvidas</a></li>
+        </ul>
+        
+        <!-- Toggle de Tema e Botão Login -->
+        <div class="flex items-center space-x-4">
+          <!-- Botão Login -->
+          <a
+            href="https://igendaapp.com.br"
+            class="bg-emerald-800 text-gray-300 px-4 py-2 rounded-full hover:bg-emerald-500 hover:text-white transition flex items-center space-x-2 no-after-effect icon-transform-container"
+          >
+            <div class="icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-arrow"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </div>
+            <span class="font-bold text-md">Login</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="scroll-smooth">
+      <section id="home" class="min-h-screen flex items-center justify-center">
+        <Start/>
+      </section>
+
+      <section id="apresentacao" class="min-h-screen flex items-center justify-center">
+        <Features />
+      </section>
+
+      <section id="precos" class="min-h-screen flex flex-col items-center justify-center">
+        <Pricing />
+      </section>
+
+      <section id="faq" class="min-h-screen flex items-center justify-center">
+        <FAQ/>
+      </section>
+
+      <footer class="py-10 text-center text-sm text-gray-500">
+        © 2025 iGenda. Todos os direitos reservados.
+      </footer>
+    </main>
+  </body>
+</html>

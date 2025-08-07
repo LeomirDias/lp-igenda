@@ -1,0 +1,167 @@
+---
+const faqs = [
+  {
+    question: "Preciso instalar algum aplicativo?",
+    answer: "Não! O iGenda funciona totalmente online através do seu navegador. Você pode acessar de qualquer dispositivo com internet, sem necessidade de instalar aplicativos."
+  },
+  {
+    question: "Como os clientes fazem o agendamento?",
+    answer: "Seus clientes podem agendar diretamente pelo seu link personalizado. O processo é simples e intuitivo, permitindo que escolham o serviço, profissional e horário disponível."
+  },
+  {
+    question: "Como funcionam os lembretes por e-mail?",
+    answer: "O sistema envia automaticamente lembretes por Whatsapp para seus clientes antes do agendamento."
+  },
+  {
+    question: "Posso personalizar minha agenda?",
+    answer: "Sim! Você pode personalizar horários de funcionamento, intervalos de atendimento, duração dos serviços e muito mais. O sistema se adapta às suas necessidades."
+  },
+  {
+    question: "Quanto tempo leva para configurar o sistema?",
+    answer: "A configuração inicial é rápida e pode ser feita em poucos minutos. Você só precisa cadastrar seus profissionais, serviços e horários de funcionamento."
+  },
+  {
+    question: "Posso solicitar reembolso caso queira cancelar?",
+    answer: "Sim! Oferecemos um período possibilidade de reembolso de 7 dias caso você não queira continuar com a sua assinatura."
+  }
+];
+---
+
+<section class="max-w-4xl mx-auto px-6 py-20 w-full">
+  <!-- Header Section -->
+  <div class="text-center mb-12">
+    <!-- Subtítulo com ícone -->
+    <div class="flex items-center justify-center gap-2 text-gray-400 text-sm mb-4">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12,6 12,12 16,14"/>
+      </svg>
+      <span>Perguntas Frequentes</span>
+    </div>
+    
+    <!-- Título principal -->
+    <h2 class="text-4xl font-bold text-gray-200 mb-4">Tire suas dúvidas</h2>
+    
+    <!-- Descrição -->
+    <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+      Encontre respostas para as perguntas mais comuns sobre o iGenda e como ele pode ajudar seu negócio.
+    </p>
+  </div>
+
+  <!-- Search Bar Section -->
+  <div class="flex flex-col sm:flex-row gap-4 mb-8">
+    <!-- Barra de pesquisa -->
+    <div class="flex-1 relative">
+      <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400">
+          <circle cx="11" cy="11" r="8"/>
+          <path d="m21 21-4.35-4.35"/>
+        </svg>
+      </div>
+      <input 
+        type="text" 
+        placeholder="Pesquisar perguntas..." 
+        class="w-full pl-10 pr-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-gray-200 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+      />
+    </div>
+    
+    <!-- Botão Expandir Todos -->
+    <button class="flex items-center gap-2 px-6 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-gray-200 hover:bg-gray-700/50 transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6,9 12,15 18,9"/>
+      </svg>
+      <span>Expandir Todos</span>
+    </button>
+  </div>
+
+  <!-- FAQ Accordion Section -->
+  <div class="space-y-4 mb-12">
+    {faqs.map(({ question, answer }) => (
+      <details class="group">
+        <summary class="flex items-center justify-between p-4 bg-gray-800/50 border border-gray-700 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors">
+          <span class="text-gray-200 font-medium">{question}</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 group-open:rotate-180 transition-transform">
+            <polyline points="6,9 12,15 18,9"/>
+          </svg>
+        </summary>
+        <div class="p-4 bg-gray-800/30 border border-gray-700 border-t-0 rounded-b-lg">
+          <p class="text-gray-300 leading-relaxed">{answer}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+
+  <!-- Footer Section -->
+  <div class="text-center">
+    <p class="text-gray-400 mb-6">
+      Ainda tem dúvidas? Entre em contato com nossa equipe de suporte.
+    </p>
+    
+    <a href="https://api.whatsapp.com/send/?phone=64992834346&text=Ol%C3%A1%21+Preciso+de+ajuda+com+a+iGenda.&type=phone_number&app_absent=0">
+        <button class="flex items-center gap-2 mx-auto px-8 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-gray-200 hover:bg-gray-700/50 transition-colors">
+      <span>Falar com suporte</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14"/>
+        <path d="m12 5 7 7-7 7"/>
+      </svg>
+    </button></a>
+  </div>
+</section>
+
+<script>
+  // Funcionalidade de pesquisa
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('input[placeholder="Pesquisar perguntas..."]');
+    const faqItems = document.querySelectorAll('details');
+    
+    if (searchInput) {
+      searchInput.addEventListener('input', function(e) {
+        const target = e.target as HTMLInputElement;
+        const searchTerm = target.value.toLowerCase();
+        
+        faqItems.forEach(item => {
+          const questionElement = item.querySelector('summary span');
+          const answerElement = item.querySelector('p');
+          
+          if (questionElement && answerElement) {
+            const question = questionElement.textContent?.toLowerCase() || '';
+            const answer = answerElement.textContent?.toLowerCase() || '';
+            
+            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+              item.style.display = 'block';
+            } else {
+              item.style.display = 'none';
+            }
+          }
+        });
+      });
+    }
+    
+    // Funcionalidade do botão "Expandir Todos"
+    const expandAllBtn = document.querySelector('button');
+    let allExpanded = false;
+    
+    if (expandAllBtn) {
+      expandAllBtn.addEventListener('click', function() {
+        allExpanded = !allExpanded;
+        faqItems.forEach(item => {
+          item.open = allExpanded;
+        });
+        
+        // Atualizar texto do botão
+        const btnText = expandAllBtn.querySelector('span');
+        const btnIcon = expandAllBtn.querySelector('svg');
+        
+        if (btnText && btnIcon) {
+          if (allExpanded) {
+            btnText.textContent = 'Recolher Todos';
+            btnIcon.style.transform = 'rotate(180deg)';
+          } else {
+            btnText.textContent = 'Expandir Todos';
+            btnIcon.style.transform = 'rotate(0deg)';
+          }
+        }
+      });
+    }
+  });
+</script>

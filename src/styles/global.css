@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Configuração da fonte Roboto */
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Configurações para scroll suave */
+html {
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Garante que as seções tenham altura adequada */
+section {
+    scroll-margin-top: 100px;
+    /* Compensa o header fixo */
+}
+
+/* Estilos específicos para o nav flutuante */
+header {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+nav {
+    background: linear-gradient(135deg, rgba(26, 29, 36, 0.95) 0%, rgba(31, 41, 55, 0.95) 100%);
+    border: 1px solid rgba(75, 85, 99, 0.3);
+    box-shadow:
+        0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04),
+        0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Melhorar a aparência do toggle de tema */
+.toggle-theme {
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-theme:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Melhorar a aparência dos links de navegação */
+nav a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #065f46;
+    transition: width 0.3s ease;
+    border-radius: 1px;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Desabilitar o efeito ::after para elementos específicos */
+.no-after-effect::after {
+    display: none !important;
+}
+
+/* Efeito de hover nos links */
+nav a:hover {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Animação suave para o header */
+header {
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Animação de transformação do ícone */
+.icon-wrapper {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-user,
+.icon-arrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-user {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+.icon-arrow {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.8);
+}
+
+.icon-transform-container:hover .icon-user {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.8);
+}
+
+.icon-transform-container:hover .icon-arrow {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
