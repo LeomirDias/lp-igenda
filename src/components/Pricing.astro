@@ -11,81 +11,128 @@ const includedFeatures = [
   "Agendamentos ilimitados",
   "Gestão de estoque de produtos e equipamentos",
   "Mensagens automáticas para clientes",
-  "Acesso integral a todas as novidades e atualizações"
+  "Acesso integral a todas as novidades e atualizações",
 ];
 
 const plans = [
   {
     name: "Assinatura Mensal",
-    description: "Para profissionais autônomos, pequenas, médias e grandes empresas.",
+    description:
+      "Para profissionais autônomos, pequenas, médias e grandes empresas.",
     price: "R$39,90",
     period: "/mês",
     installment: null,
     buttonText: "Assinar agora",
-    url: "https://pay.cakto.com.br/ht897wv_511991"
+    url: "https://pay.cakto.com.br/ht897wv_511991",
+    popular: false,
   },
   {
     name: "Assinatura Trimestral",
-    description: "Para profissionais autônomos, pequenas, médias e grandes empresas.",
+    description:
+      "Para profissionais autônomos, pequenas, médias e grandes empresas.",
     price: "R$104,90",
     period: "/mês",
     installment: "Em até 3x de R$ 34,96",
     buttonText: "Assinar agora",
-    url: "https://pay.cakto.com.br/5aqjg9q_513522"
+    url: "https://pay.cakto.com.br/5aqjg9q_513522",
+    popular: false,
   },
   {
     name: "Assinatura Semestral",
-    description: "Para profissionais autônomos, pequenas, médias e grandes empresas.",
+    description:
+      "Para profissionais autônomos, pequenas, médias e grandes empresas.",
     price: "R$179",
     period: "/mês",
     installment: "Em até 6x de R$ 29,83",
     buttonText: "Assinar agora",
-    url: "https://pay.cakto.com.br/3cia8pm_513526"
-  }
+    url: "https://pay.cakto.com.br/3cia8pm_513526",
+    popular: true,
+  },
 ];
 ---
 
-<section class="max-w-6xl mx-auto px-6 py-20 w-full">
+<section
+  class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 w-full"
+>
   <!-- Seção de Recursos Incluídos -->
-  <div class="mb-16">
-    <h2 class="text-4xl font-bold text-white text-center mb-12">Todos os planos incluem:</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      {includedFeatures.map((feature) => (
-        <div class="bg-gray-800 rounded-lg p-4 flex items-center">
-          <svg class="w-5 h-5 text-emerald-500 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-          </svg>
-          <span class="text-gray-300 text-sm">{feature}</span>
-        </div>
-      ))}
+  <div class="mb-8 sm:mb-12 lg:mb-16">
+    <h2
+      class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-8 sm:mb-12"
+    >
+      Todos os planos incluem:
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+      {
+        includedFeatures.map((feature) => (
+          <div class="bg-gray-800 rounded-lg p-3 sm:p-4 flex items-start sm:items-center">
+            <svg
+              class="w-4 sm:w-5 h-4 sm:h-5 text-emerald-500 mr-2 sm:mr-3 flex-shrink-0 mt-0.5 sm:mt-0"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span class="text-gray-300 text-xs sm:text-sm">{feature}</span>
+          </div>
+        ))
+      }
     </div>
   </div>
 
   <!-- Seção de Planos -->
-  <div class="grid gap-8 md:grid-cols-3">
-    {plans.map((plan) => (
-      <article class="bg-gray-800 rounded-lg p-6 flex flex-col shadow-lg">
-        <h3 class="text-xl font-bold text-white mb-2">{plan.name}</h3>
-        <p class="text-gray-400 text-sm mb-4">{plan.description}</p>
-        
-        <div class="mb-4">
-          <div class="flex items-baseline">
-            <span class="text-3xl font-bold text-white">{plan.price}</span>
-            <span class="text-gray-400 ml-1">{plan.period}</span>
-          </div>
-          {plan.installment && (
-            <div class="mt-2">
-              <span class="bg-emerald-900 text-emerald-300 px-2 py-1 rounded text-xs">{plan.installment}</span>
+  <div class="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+    {
+      plans.map((plan) => (
+        <article
+          class={`bg-gray-800 rounded-lg p-4 sm:p-6 flex flex-col shadow-lg relative ${plan.popular ? "ring-2 ring-emerald-500 ring-opacity-50 transform scale-105" : ""}`}
+        >
+          {plan.popular && (
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+              <span class="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-4 py-1 rounded-full text-xs font-semibold shadow-lg animate-pulse">
+                ⭐ Mais Popular
+              </span>
             </div>
           )}
-        </div>
-        
-        <p class="text-gray-400 text-xs mb-6">Clique em "{plan.buttonText}" para escolher este plano</p>
-        
-        <a href={plan.url} class="mt-auto bg-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 transition-colors text-center">
-          {plan.buttonText}
-        </a>
-      </article>
-    ))}
+
+          <h3 class="text-lg sm:text-xl font-bold text-white mb-2">
+            {plan.name}
+          </h3>
+          <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
+            {plan.description}
+          </p>
+
+          <div class="mb-3 sm:mb-4">
+            <div class="flex items-baseline">
+              <span class="text-2xl sm:text-3xl font-bold text-white">
+                {plan.price}
+              </span>
+              <span class="text-gray-400 ml-1 text-sm">{plan.period}</span>
+            </div>
+            {plan.installment && (
+              <div class="mt-2">
+                <span class="bg-emerald-900 text-emerald-300 px-2 py-1 rounded text-xs">
+                  {plan.installment}
+                </span>
+              </div>
+            )}
+          </div>
+
+          <p class="text-gray-400 text-xs mb-4 sm:mb-6">
+            Clique em "{plan.buttonText}" para escolher este plano
+          </p>
+
+          <a
+            href={plan.url}
+            class={`mt-auto px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-colors text-center text-sm sm:text-base ${plan.popular ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white hover:from-emerald-600 hover:to-emerald-700 shadow-lg" : "bg-emerald-500 text-white hover:bg-emerald-600"}`}
+          >
+            {plan.buttonText}
+          </a>
+        </article>
+      ))
+    }
   </div>
 </section>

@@ -20,7 +20,7 @@ body {
 
 /* Garante que as seções tenham altura adequada */
 section {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 70px;
     /* Compensa o header fixo */
 }
 

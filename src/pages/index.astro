@@ -12,61 +12,125 @@ import Start from "../components/Start.astro";
     <title>iGenda - Sua agenda inteligente</title>
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="stylesheet" href="/src/styles/global.css" />
-    <script src="/src/scripts/scroll.js" defer></script>
+    <script src="/scroll.js" defer></script>
   </head>
 
   <body class="text-gray-200 bg-[#171c24]">
-
-    <header class="fixed top-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-6xl z-50">
-      <nav class="bg-[#171c24] border border-transparent rounded-2xl shadow-2xl backdrop-blur-sm bg-opacity-95 px-6 py-4 flex justify-between items-center">
+    <!-- Mobile e Tablet (até lg) -->
+    <header
+      class="absolute top-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-6xl z-50 lg:hidden"
+    >
+      <nav
+        class="bg-[#171c24] border border-transparent rounded-full shadow-2xl backdrop-blur-sm bg-opacity-95 px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center"
+      >
         <!-- Logotipo AGENDEI -->
-        <a href="#home" class="flex items-center no-after-effect"> 
-          <img src="/LogoiGendaNew.png" alt="Logo iGenda" class="h-12 w-auto" />
-          <!-- <h1 class="text-2xl font-bold text-emerald-800">iGenda</h1> -->
+        <a href="#home" class="flex items-center no-after-effect">
+          <h1 class="text-xl sm:text-2xl font-bold text-gray-300">iGenda</h1>
         </a>
-        
+
+        <!-- Botões de Ação -->
+        <div class="flex items-center space-x-2 sm:space-x-4">
+          <!-- Botão Login -->
+          <a href="https://igendaapp.com.br" class="text-gray-300">
+            <span class="font-bold text-xs sm:text-sm">Entrar</span>
+          </a>
+          <!-- Botão CTA -->
+          <a
+            href="https://igendaapp.com.br/authentication/subscription-plans"
+            class="bg-emerald-800 text-gray-300 px-3 sm:px-4 py-2 rounded-full hover:bg-emerald-500 hover:text-white transition flex items-center space-x-2 no-after-effect icon-transform-container"
+          >
+            <span class="font-bold text-xs sm:text-sm">Quero começar</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Desktop (lg e acima) -->
+    <header class="fixed top-4 left-0 w-full z-50 hidden lg:flex">
+      <nav
+        class="bg-[#171c24] border-b border-gray-800 shadow-2xl backdrop-blur-sm bg-opacity-95 rounded-full px-6 xl:px-8 py-4 flex justify-between items-center w-full max-w-7xl mx-auto"
+      >
+        <!-- Logotipo -->
+        <a href="#home" class="flex items-center no-after-effect">
+          <h1 class="text-xl sm:text-2xl font-bold text-gray-300">iGenda</h1>
+        </a>
+
         <!-- Links de Navegação -->
-        <ul class="flex space-x-8 text-sm font-medium text-gray-400">
-          <li><a href="#apresentacao" class="scroll-link hover:text-emerald-500 transition-colors">Funcionalidades</a></li>
-          <li><a href="#precos" class="scroll-link hover:text-emerald-500 transition-colors">Planos</a></li>
-          <li><a href="#faq" class="scroll-link hover:text-emerald-500 transition-colors">Dúvidas</a></li>
+        <ul
+          class="flex space-x-6 xl:space-x-8 text-lg xl:text-xl font-medium text-gray-400"
+        >
+          <li>
+            <a
+              href="#apresentacao"
+              class="scroll-link hover:text-emerald-500 transition-colors"
+              >Funcionalidades</a
+            >
+          </li>
+          <li>
+            <a
+              href="#precos"
+              class="scroll-link hover:text-emerald-500 transition-colors"
+              >Planos</a
+            >
+          </li>
+          <li>
+            <a
+              href="#faq"
+              class="scroll-link hover:text-emerald-500 transition-colors"
+              >Dúvidas</a
+            >
+          </li>
         </ul>
-        
-        <!-- Toggle de Tema e Botão Login -->
+
+        <!-- Botões de Ação -->
         <div class="flex items-center space-x-4">
           <!-- Botão Login -->
+          <a href="https://igendaapp.com.br" class="text-gray-300">
+            <span class="font-bold text-sm">Entrar</span>
+          </a>
+          <!-- Botão CTA -->
           <a
-            href="https://igendaapp.com.br"
+            href="https://igendaapp.com.br/authentication/subscription-plans"
             class="bg-emerald-800 text-gray-300 px-4 py-2 rounded-full hover:bg-emerald-500 hover:text-white transition flex items-center space-x-2 no-after-effect icon-transform-container"
           >
-            <div class="icon-wrapper">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-arrow"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </div>
-            <span class="font-bold text-md">Login</span>
+            <span class="font-bold text-sm">Quero começar</span>
           </a>
         </div>
       </nav>
     </header>
 
     <main class="scroll-smooth">
-      <section id="home" class="min-h-screen flex items-center justify-center">
-        <Start/>
+      <section
+        id="home"
+        class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
+      >
+        <Start />
       </section>
 
-      <section id="apresentacao" class="min-h-screen flex items-center justify-center">
+      <section
+        id="apresentacao"
+        class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
+      >
         <Features />
       </section>
 
-      <section id="precos" class="min-h-screen flex flex-col items-center justify-center">
+      <section
+        id="precos"
+        class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8"
+      >
         <Pricing />
       </section>
 
-      <section id="faq" class="min-h-screen flex items-center justify-center">
-        <FAQ/>
+      <section
+        id="faq"
+        class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
+      >
+        <FAQ />
       </section>
 
-      <footer class="py-10 text-center text-sm text-gray-500">
+      <footer
+        class="py-8 sm:py-10 text-center text-xs sm:text-sm text-gray-500 px-4"
+      >
         © 2025 iGenda. Todos os direitos reservados.
       </footer>
     </main>
