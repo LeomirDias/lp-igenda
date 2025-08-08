@@ -127,6 +127,13 @@ const plans = [
 
           <a
             href={plan.url}
+            data-fb-event={
+              plan.name === "Assinatura Mensal"
+                ? "PlanoMensalClicado"
+                : plan.name === "Assinatura Trimestral"
+                  ? "PlanoTrimestralClicado"
+                  : "PlanoSemestralClicado"
+            }
             class={`mt-auto px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-colors text-center text-sm sm:text-base ${plan.popular ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white hover:from-emerald-600 hover:to-emerald-700 shadow-lg" : "bg-emerald-500 text-white hover:bg-emerald-600"}`}
           >
             {plan.buttonText}

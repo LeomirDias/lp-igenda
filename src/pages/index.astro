@@ -32,14 +32,24 @@ import Start from "../components/Start.astro";
         <div class="flex items-center space-x-2 sm:space-x-4">
           <!-- Botão Login -->
           <a href="https://igendaapp.com.br" class="text-gray-300">
-            <span class="font-bold text-xs sm:text-sm">Entrar</span>
+            <button
+              class="font-bold text-xs sm:text-sm"
+              data-fb-event="DirecionamentoParaiGendaClicado"
+            >
+              Entrar
+            </button>
           </a>
           <!-- Botão CTA -->
           <a
-            href="https://igendaapp.com.br/authentication/subscription-plans"
+            href="#precos"
             class="bg-emerald-800 text-gray-300 px-3 sm:px-4 py-2 rounded-full hover:bg-emerald-500 hover:text-white transition flex items-center space-x-2 no-after-effect icon-transform-container"
           >
-            <span class="font-bold text-xs sm:text-sm">Quero começar</span>
+            <button
+              class="font-bold text-xs sm:text-sm"
+              data-fb-event="VisualizacaoDePlanosClicado"
+            >
+              Quero começar
+            </button>
           </a>
         </div>
       </nav>
@@ -86,14 +96,24 @@ import Start from "../components/Start.astro";
         <div class="flex items-center space-x-4">
           <!-- Botão Login -->
           <a href="https://igendaapp.com.br" class="text-gray-300">
-            <span class="font-bold text-sm">Entrar</span>
+            <button
+              class="font-bold text-sm"
+              data-fb-event="DirecionamentoParaiGendaClicado"
+            >
+              Entrar
+            </button>
           </a>
           <!-- Botão CTA -->
           <a
-            href="https://igendaapp.com.br/authentication/subscription-plans"
+            href="#precos"
             class="bg-emerald-800 text-gray-300 px-4 py-2 rounded-full hover:bg-emerald-500 hover:text-white transition flex items-center space-x-2 no-after-effect icon-transform-container"
           >
-            <span class="font-bold text-sm">Quero começar</span>
+            <button
+              class="font-bold text-sm"
+              data-fb-event="VisualizacaoDePlanosClicado"
+            >
+              Quero começar
+            </button>
           </a>
         </div>
       </nav>
