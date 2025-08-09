@@ -3,7 +3,7 @@ import "../styles/global.css";
 const pixelId = "1097411068422376";
 ---
 
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -63,7 +63,7 @@ const pixelId = "1097411068422376";
 
     <!-- Facebook Pixel Event Tracking -->
     <script is:inline>
-      document.addEventListener("DOMContentLoaded", function () {
+      window.addEventListener("load", function () {
         document.querySelectorAll("button, a[data-fb-event]").forEach((el) => {
           el.addEventListener("click", () => {
             const label = el.getAttribute("data-fb-event") || "BotaoClicado";

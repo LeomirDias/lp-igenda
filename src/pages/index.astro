@@ -3,18 +3,10 @@ import FAQ from "../components/FAQ.astro";
 import Features from "../components/Features.astro";
 import Pricing from "../components/Pricing.astro";
 import Start from "../components/Start.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>iGenda - Sua agenda inteligente</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="/src/styles/global.css" />
-    <script src="/scroll.js" defer></script>
-  </head>
-
+<Layout>
   <body class="text-gray-200 bg-[#171c24]">
     <!-- Mobile e Tablet (até lg) -->
     <header
@@ -155,4 +147,4 @@ import Start from "../components/Start.astro";
       </footer>
     </main>
   </body>
-</html>
+</Layout>
