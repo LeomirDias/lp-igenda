@@ -7,144 +7,142 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <body class="text-gray-200 bg-[#171c24]">
-    <!-- Mobile e Tablet (até lg) -->
-    <header
-      class="absolute top-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-6xl z-50 lg:hidden"
+  <!-- Mobile e Tablet (até lg) -->
+  <header
+    class="absolute top-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-6xl z-50 lg:hidden"
+  >
+    <nav
+      class="bg-[#171c24] border border-transparent rounded-full shadow-2xl backdrop-blur-sm bg-opacity-95 px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center"
     >
-      <nav
-        class="bg-[#171c24] border border-transparent rounded-full shadow-2xl backdrop-blur-sm bg-opacity-95 px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center"
-      >
-        <!-- Logotipo AGENDEI -->
-        <a href="#home" class="flex items-center no-after-effect">
-          <h1 class="text-xl sm:text-2xl font-bold text-gray-300">iGenda</h1>
-        </a>
+      <!-- Logotipo AGENDEI -->
+      <a href="#home" class="flex items-center no-after-effect">
+        <h1 class="text-xl sm:text-2xl font-bold text-gray-300">iGenda</h1>
+      </a>
 
-        <!-- Botões de Ação -->
-        <div class="flex items-center space-x-2 sm:space-x-4">
-          <!-- Botão Login -->
-          <a href="https://igendaapp.com.br" class="text-gray-300">
-            <button
-              class="font-bold text-xs sm:text-sm"
-              data-fb-event="DirecionamentoParaiGendaClicado"
-            >
-              Entrar
-            </button>
-          </a>
-          <!-- Botão CTA -->
-          <a
-            href="#precos"
-            class="bg-emerald-800 text-gray-300 px-3 sm:px-4 py-2 rounded-full hover:bg-emerald-500 hover:text-white transition flex items-center space-x-2 no-after-effect icon-transform-container"
+      <!-- Botões de Ação -->
+      <div class="flex items-center space-x-2 sm:space-x-4">
+        <!-- Botão Login -->
+        <a href="https://igendaapp.com.br" class="text-gray-300">
+          <button
+            class="font-bold text-xs sm:text-sm"
+            data-fb-event="DirecionamentoParaiGendaClicado"
           >
-            <button
-              class="font-bold text-xs sm:text-sm"
-              data-fb-event="VisualizacaoDePlanosClicado"
-            >
-              Quero começar
-            </button>
-          </a>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Desktop (lg e acima) -->
-    <header class="fixed top-4 left-0 w-full z-50 hidden lg:flex">
-      <nav
-        class="bg-[#171c24] border-b border-gray-800 shadow-2xl backdrop-blur-sm bg-opacity-95 rounded-full px-6 xl:px-8 py-4 flex justify-between items-center w-full max-w-7xl mx-auto"
-      >
-        <!-- Logotipo -->
-        <a href="#home" class="flex items-center no-after-effect">
-          <h1 class="text-xl sm:text-2xl font-bold text-gray-300">iGenda</h1>
+            Entrar
+          </button>
         </a>
-
-        <!-- Links de Navegação -->
-        <ul
-          class="flex space-x-6 xl:space-x-8 text-lg xl:text-xl font-medium text-gray-400"
+        <!-- Botão CTA -->
+        <a
+          href="#precos"
+          class="bg-emerald-800 text-gray-300 px-3 sm:px-4 py-2 rounded-full hover:bg-emerald-500 hover:text-white transition flex items-center space-x-2 no-after-effect icon-transform-container"
         >
-          <li>
-            <a
-              href="#apresentacao"
-              class="scroll-link hover:text-emerald-500 transition-colors"
-              >Funcionalidades</a
-            >
-          </li>
-          <li>
-            <a
-              href="#precos"
-              class="scroll-link hover:text-emerald-500 transition-colors"
-              >Planos</a
-            >
-          </li>
-          <li>
-            <a
-              href="#faq"
-              class="scroll-link hover:text-emerald-500 transition-colors"
-              >Dúvidas</a
-            >
-          </li>
-        </ul>
+          <button
+            class="font-bold text-xs sm:text-sm"
+            data-fb-event="VisualizacaoDePlanosClicado"
+          >
+            Quero começar
+          </button>
+        </a>
+      </div>
+    </nav>
+  </header>
 
-        <!-- Botões de Ação -->
-        <div class="flex items-center space-x-4">
-          <!-- Botão Login -->
-          <a href="https://igendaapp.com.br" class="text-gray-300">
-            <button
-              class="font-bold text-sm"
-              data-fb-event="DirecionamentoParaiGendaClicado"
-            >
-              Entrar
-            </button>
-          </a>
-          <!-- Botão CTA -->
+  <!-- Desktop (lg e acima) -->
+  <header class="fixed top-4 left-0 w-full z-50 hidden lg:flex">
+    <nav
+      class="bg-[#171c24] border-b border-gray-800 shadow-2xl backdrop-blur-sm bg-opacity-95 rounded-full px-6 xl:px-8 py-4 flex justify-between items-center w-full max-w-7xl mx-auto"
+    >
+      <!-- Logotipo -->
+      <a href="#home" class="flex items-center no-after-effect">
+        <h1 class="text-xl sm:text-2xl font-bold text-gray-300">iGenda</h1>
+      </a>
+
+      <!-- Links de Navegação -->
+      <ul
+        class="flex space-x-6 xl:space-x-8 text-lg xl:text-xl font-medium text-gray-400"
+      >
+        <li>
+          <a
+            href="#apresentacao"
+            class="scroll-link hover:text-emerald-500 transition-colors"
+            >Funcionalidades</a
+          >
+        </li>
+        <li>
           <a
             href="#precos"
-            class="bg-emerald-800 text-gray-300 px-4 py-2 rounded-full hover:bg-emerald-500 hover:text-white transition flex items-center space-x-2 no-after-effect icon-transform-container"
+            class="scroll-link hover:text-emerald-500 transition-colors"
+            >Planos</a
           >
-            <button
-              class="font-bold text-sm"
-              data-fb-event="VisualizacaoDePlanosClicado"
-            >
-              Quero começar
-            </button>
-          </a>
-        </div>
-      </nav>
-    </header>
+        </li>
+        <li>
+          <a
+            href="#faq"
+            class="scroll-link hover:text-emerald-500 transition-colors"
+            >Dúvidas</a
+          >
+        </li>
+      </ul>
 
-    <main class="scroll-smooth">
-      <section
-        id="home"
-        class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
-      >
-        <Start />
-      </section>
+      <!-- Botões de Ação -->
+      <div class="flex items-center space-x-4">
+        <!-- Botão Login -->
+        <a href="https://igendaapp.com.br" class="text-gray-300">
+          <button
+            class="font-bold text-sm"
+            data-fb-event="DirecionamentoParaiGendaClicado"
+          >
+            Entrar
+          </button>
+        </a>
+        <!-- Botão CTA -->
+        <a
+          href="#precos"
+          class="bg-emerald-800 text-gray-300 px-4 py-2 rounded-full hover:bg-emerald-500 hover:text-white transition flex items-center space-x-2 no-after-effect icon-transform-container"
+        >
+          <button
+            class="font-bold text-sm"
+            data-fb-event="VisualizacaoDePlanosClicado"
+          >
+            Quero começar
+          </button>
+        </a>
+      </div>
+    </nav>
+  </header>
 
-      <section
-        id="apresentacao"
-        class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
-      >
-        <Features />
-      </section>
+  <main class="scroll-smooth">
+    <section
+      id="home"
+      class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
+    >
+      <Start />
+    </section>
 
-      <section
-        id="precos"
-        class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8"
-      >
-        <Pricing />
-      </section>
+    <section
+      id="apresentacao"
+      class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
+    >
+      <Features />
+    </section>
 
-      <section
-        id="faq"
-        class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
-      >
-        <FAQ />
-      </section>
+    <section
+      id="precos"
+      class="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8"
+    >
+      <Pricing />
+    </section>
 
-      <footer
-        class="py-8 sm:py-10 text-center text-xs sm:text-sm text-gray-500 px-4"
-      >
-        © 2025 iGenda. Todos os direitos reservados.
-      </footer>
-    </main>
-  </body>
+    <section
+      id="faq"
+      class="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8"
+    >
+      <FAQ />
+    </section>
+
+    <footer
+      class="py-8 sm:py-10 text-center text-xs sm:text-sm text-gray-500 px-4"
+    >
+      © 2025 iGenda. Todos os direitos reservados.
+    </footer>
+  </main>
 </Layout>
