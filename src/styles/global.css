@@ -165,24 +165,17 @@ header {
     0%,
     100% {
         transform: scale(1);
-        /* tamanho normal */
-        color: #fff;
-        /* cor inicial/final */
     }
 
     50% {
-        transform: scale(1.15);
-        /* aproxima */
-        color: #57ec49;
-        /* cor durante o zoom (exemplo: verde-lima) */
+        transform: scale(1.25);
+
     }
 }
 
 @layer utilities {
     .zoom-in-out {
         animation: zoom-in-out 2.5s infinite ease-in-out;
-        /* Garante que a cor de texto será animada */
-        color: #fff;
         transition: color 0.2s;
     }
 }
