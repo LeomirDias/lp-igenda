@@ -4,19 +4,22 @@ import Features from "../components/Features.astro";
 import Pricing from "../components/Pricing.astro";
 import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
+import Segments from "../components/Segments.astro";
+import SegmentsTwo from "../components/SegmentsTwo.astro";
 ---
 
 <Layout>
   <main class="scroll-smooth">
     <section
       id="home"
-      class="min-h-screen flex flex-col gap-10 items-center justify-center mt-10"
+      class="min-h-screen flex flex-col gap-10 items-center justify-center"
     >
       <Welcome />
       <Features />
+      <Segments />
+      <SegmentsTwo />
       <Pricing />
       <Testimonials />
-
       <footer
         class="py-8 sm:py-10 text-center text-xs sm:text-sm text-gray-500 px-4"
       >

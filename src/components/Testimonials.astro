@@ -1,74 +1,121 @@
----
-const faqs = [
-  {
-    question: "Preciso instalar algum aplicativo?",
-    answer:
-      "Não! O iGenda funciona totalmente online através do seu navegador. Você pode acessar de qualquer dispositivo com internet, sem necessidade de instalar aplicativos.",
-  },
-  {
-    question: "Como os clientes fazem o agendamento?",
-    answer:
-      "Seus clientes podem agendar diretamente pelo seu link personalizado. O processo é simples e intuitivo, permitindo que escolham o serviço, profissional e horário disponível.",
-  },
-  {
-    question: "Como funcionam os lembretes por e-mail?",
-    answer:
-      "O sistema envia automaticamente lembretes por Whatsapp para seus clientes antes do agendamento.",
-  },
-  {
-    question: "Posso personalizar minha agenda?",
-    answer:
-      "Sim! Você pode personalizar horários de funcionamento, intervalos de atendimento, duração dos serviços e muito mais. O sistema se adapta às suas necessidades.",
-  },
-  {
-    question: "Quanto tempo leva para configurar o sistema?",
-    answer:
-      "A configuração inicial é rápida e pode ser feita em poucos minutos. Você só precisa cadastrar seus profissionais, serviços e horários de funcionamento.",
-  },
-  {
-    question: "Posso solicitar reembolso caso queira cancelar?",
-    answer:
-      "Sim! Oferecemos um período possibilidade de reembolso de 7 dias caso você não queira continuar com a sua assinatura.",
-  },
-];
----
-
-<section
-  class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 w-full"
->
-  <h1
-    class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-center"
-  >
-    Depoimentos (Faltando)
+<div class="flex flex-col gap-5 max-w-6xl mx-auto px-4">
+  <!-- Lista vertical de cards -->
+  <h1 class="font-bold text-emerald-600 text-2xl text-center">
+    🗣️ Veja como a iGenda pode mudar no seu dia a dia!
   </h1>
 
-  <!-- Footer Section
-  <div class="text-center">
-    <p class="text-gray-400 mb-4 sm:mb-6 text-sm sm:text-base">
-      Ainda tem dúvidas? Entre em contato com nossa equipe de suporte.
-    </p>
+  <!-- Depoimento 01 -->
+  <div
+    class="relative w-full flex items-start gap-4 border border-emerald-500 rounded-xl p-4 bg-white"
+  >
+    <img
+      class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover ring-4 ring-emerald-500"
+      src="/MarianaAlves.png"
+      alt="Foto cliente"
+      loading="lazy"
+    />
 
-    <a
-      href="https://api.whatsapp.com/send/?phone=64992834346&text=Ol%C3%A1%21+Preciso+de+ajuda+com+a+iGenda.&type=phone_number&app_absent=0"
-      class="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors text-sm sm:text-base"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="16"
-        height="16"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        class="sm:w-5 sm:h-5"
-      >
-        <path
-          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
-        ></path>
-      </svg>
-      <span>Falar com Suporte</span>
-    </a>
-  </div> -->
-</section>
+    <div class="flex flex-col gap-3 flex-1">
+      <p class="text-lg sm:text-xl leading-relaxed text-gray-900">
+        "Gente, sério... antes eu vivia perdida com os horários, sempre esquecia
+        de avisar cliente e levava bolo direto. Agora o iGenda avisa tudo
+        sozinho e eu não preciso ficar no celular o dia inteiro."
+      </p>
+      <p class="text-base sm:text-lg text-gray-900 font-semibold text-right">
+        — Mariana Alves, cabeleireira
+      </p>
+    </div>
+  </div>
+
+  <!-- Depoimento 02 -->
+  <div
+    class="relative w-full flex items-start gap-4 border border-emerald-500 rounded-xl p-4 bg-white"
+  >
+    <img
+      class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover ring-4 ring-emerald-500"
+      src="/RicardoMendes.png"
+      alt="Foto cliente"
+      loading="lazy"
+    />
+
+    <div class="flex flex-col gap-3 flex-1">
+      <p class="text-lg sm:text-xl leading-relaxed text-gray-900">
+        "Eu marcava tudo em caderno… aí quando sumia ou molhava era um
+        desespero. No iGenda fica tudo no celular, organizado e com lembrete.
+        Salvou minha vida"
+      </p>
+      <p class="text-base sm:text-lg text-gray-900 font-semibold text-right">
+        — Ricardo Mendes, barbeiro
+      </p>
+    </div>
+  </div>
+
+  <!-- Depoimento 03 -->
+  <div
+    class="relative w-full flex items-start gap-4 border border-emerald-500 rounded-xl p-4 bg-white"
+  >
+    <img
+      class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover ring-4 ring-emerald-500"
+      src="/CamilaTorres.png"
+      alt="Foto cliente"
+      loading="lazy"
+    />
+
+    <div class="flex flex-col gap-3 flex-1">
+      <p class="text-lg sm:text-xl leading-relaxed text-gray-900">
+        "A melhor coisa foi o link pra agendar. Minhas clientes mesmas marcam o
+        horário, e eu só recebo a notificação. É muito mais prático, não volto
+        pro jeito antigo nunca mais."
+      </p>
+      <p class="text-base sm:text-lg text-gray-900 font-semibold text-right">
+        — Camila Torres, esteticista
+      </p>
+    </div>
+  </div>
+
+  <!-- Depoimento 04 -->
+  <div
+    class="relative w-full flex items-start gap-4 border border-emerald-500 rounded-xl p-4 bg-white"
+  >
+    <img
+      class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover ring-4 ring-emerald-500"
+      src="/FelipeAraujo.png"
+      alt="Foto cliente"
+      loading="lazy"
+    />
+
+    <div class="flex flex-col gap-3 flex-1">
+      <p class="text-lg sm:text-xl leading-relaxed text-gray-900">
+        "Aqui na clínica era uma bagunça, sempre alguém esquecia de avisar
+        paciente. Agora todo mundo recebe mensagem no Whats e as faltas
+        diminuíram muito. Até o caixa ficou mais fácil de controlar."
+      </p>
+      <p class="text-base sm:text-lg text-gray-900 font-semibold text-right">
+        — Felipe Araújo, fisioterapeuta
+      </p>
+    </div>
+  </div>
+
+  <!-- Depoimento 05 -->
+  <div
+    class="relative w-full flex items-start gap-4 border border-emerald-500 rounded-xl p-4 bg-white"
+  >
+    <img
+      class="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover ring-4 ring-emerald-500"
+      src="/JulianaCastro.png"
+      alt="Foto cliente"
+      loading="lazy"
+    />
+
+    <div class="flex flex-col gap-3 flex-1">
+      <p class="text-lg sm:text-xl leading-relaxed text-gray-900">
+        "Antes do iGenda, eu perdia cliente porque esquecia de responder na
+        hora. Hoje elas mesmas marcam e recebem aviso. É como ter uma secretária
+        sem pagar salário."
+      </p>
+      <p class="text-base sm:text-lg text-gray-900 font-semibold text-right">
+        — Juliana Castro, lash designer
+      </p>
+    </div>
+  </div>
+</div>

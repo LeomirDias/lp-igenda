@@ -11,6 +11,7 @@
 html {
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -99,6 +100,7 @@ header {
     }
 }
 
+
 /* Animação de transformação do ícone */
 .icon-wrapper {
     position: relative;
@@ -137,4 +139,57 @@ header {
 .icon-transform-container:hover .icon-arrow {
     opacity: 1;
     transform: rotate(0deg) scale(1);
+}
+
+@keyframes bounce-custom {
+
+    0%,
+    100% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+        transform: translateY(-15px);
+        /* altura do pulo */
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+.bounce-custom {
+    animation: bounce-custom 1s infinite;
+}
+
+@keyframes zoom-in-out {
+
+    0%,
+    100% {
+        transform: scale(1);
+        /* tamanho normal */
+        color: #fff;
+        /* cor inicial/final */
+    }
+
+    50% {
+        transform: scale(1.15);
+        /* aproxima */
+        color: #57ec49;
+        /* cor durante o zoom (exemplo: verde-lima) */
+    }
+}
+
+@layer utilities {
+    .zoom-in-out {
+        animation: zoom-in-out 2.5s infinite ease-in-out;
+        /* Garante que a cor de texto será animada */
+        color: #fff;
+        transition: color 0.2s;
+    }
+}
+
+/* Impede que mídias causem overflow horizontal */
+img,
+video {
+    max-width: 100%;
+    height: auto;
 }

@@ -1,0 +1,169 @@
+<div class="carousel">
+  <div class="carousel__track">
+    <!-- Bloco original -->
+    <div class="carousel__item rounded-2xl flex flex-col items-center">
+      <img
+        src="/Saloes.png"
+        alt="Salões de beleza - Demonstração"
+        class="w-50 rounded-2xl shadow-md"
+        loading="lazy"
+      />
+      <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
+        Salões de beleza
+      </h2>
+    </div>
+    <div class="carousel__item rounded-2xl flex flex-col items-center">
+      <img
+        src="/Barbearias.png"
+        alt="Barbearias - Demonstração"
+        class="w-50 rounded-2xl shadow-md"
+        loading="lazy"
+      />
+      <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
+        Barbearias
+      </h2>
+    </div>
+    <div class="carousel__item rounded-2xl flex flex-col items-center">
+      <img
+        src="/DesignDeSobrancelhas.png"
+        alt="Lash Designers - Demonstração"
+        class="w-50 rounded-2xl shadow-md"
+        loading="lazy"
+      />
+      <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
+        Lash Designers
+      </h2>
+    </div>
+    <div class="carousel__item rounded-2xl flex flex-col items-center">
+      <img
+        src="/Depilacao.png"
+        alt="Depilação - Demonstração"
+        class="w-50 rounded-2xl shadow-md"
+        loading="lazy"
+      />
+
+      <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
+        Depilação
+      </h2>
+    </div>
+    <div class="carousel__item rounded-2xl flex flex-col items-center">
+      <img
+        src="/Manicure.png"
+        alt="Nail Designer - Demonstração"
+        class="w-50 rounded-2xl shadow-md"
+        loading="lazy"
+      />
+      <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
+        Nail Designers
+      </h2>
+    </div>
+
+    <!-- Duplicação para rolagem infinita sem cortes -->
+    <div class="carousel__item rounded-2xl flex flex-col items-center">
+      <img
+        src="/Saloes.png"
+        alt="Salões de beleza - Demonstração"
+        class="w-50 rounded-2xl shadow-md"
+        loading="lazy"
+      />
+      <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
+        Salões de beleza
+      </h2>
+    </div>
+    <div
+      class="carousel__item rounded-2xl flex flex-col items-center"
+      aria-hidden="true"
+    >
+      <img
+        src="/Barbearias.png"
+        alt=""
+        class="w-50 rounded-2xl shadow-md"
+        loading="lazy"
+      />
+
+      <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
+        Barbearias
+      </h2>
+    </div>
+    <div
+      class="carousel__item rounded-2xl flex flex-col items-center"
+      aria-hidden="true"
+    >
+      <img
+        src="/DesignDeSobrancelhas.png"
+        alt=""
+        class="w-50 rounded-2xl shadow-md"
+        loading="lazy"
+      />
+      <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
+        Lash Designers
+      </h2>
+    </div>
+    <div
+      class="carousel__item rounded-2xl flex flex-col items-center"
+      aria-hidden="true"
+    >
+      <img
+        src="/Depilacao.png"
+        alt=""
+        class="w-50 rounded-2xl shadow-md"
+        loading="lazy"
+      />
+      <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
+        Depilação
+      </h2>
+    </div>
+    <div
+      class="carousel__item rounded-2xl flex flex-col items-center"
+      aria-hidden="true"
+    >
+      <img
+        src="/Manicure.png"
+        alt=""
+        class="w-50 rounded-2xl shadow-md"
+        loading="lazy"
+      />
+      <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
+        Nail Designers
+      </h2>
+    </div>
+  </div>
+</div>
+
+<style>
+  .carousel {
+    overflow: hidden;
+  }
+
+  .carousel__track {
+    display: flex;
+    width: max-content;
+    animation: carousel-scroll 20s linear infinite;
+  }
+
+  .carousel__item {
+    flex: 0 0 auto;
+    width: 18rem;
+  }
+
+  @media (min-width: 640px) {
+    .carousel__item {
+      width: 20rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .carousel__item {
+      width: 22rem;
+    }
+  }
+
+  @keyframes carousel-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>

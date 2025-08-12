@@ -1,107 +1,123 @@
----
-const plans = [
-  {
-    name: "Assinatura Trimestral",
-    description: "O favorito de quem já usa a iGenda!",
-    price: "R$104,90",
-    period: "/mês",
-    installment: "Em até 3x de R$ 34,96",
-    buttonText: "Assinar agora",
-    url: "https://pay.cakto.com.br/5aqjg9q_513522",
-    popular: true,
-  },
-  {
-    name: "Assinatura Mensal",
-    description: "Mensal com 50% de desconto!",
-    price: "R$39,90",
-    period: "/mês",
-    installment: null,
-    buttonText: "Assinar agora",
-    url: "https://pay.cakto.com.br/ht897wv_511991",
-    popular: false,
-  },
-  {
-    name: "Assinatura Semestral",
-    description: "Perfeito para quem quer organizar tudo e gastar pouco",
-    price: "R$179",
-    period: "/mês",
-    installment: "Em até 6x de R$ 29,83",
-    buttonText: "Assinar agora",
-    url: "https://pay.cakto.com.br/3cia8pm_513526",
-    popular: false,
-  },
-];
----
-
 <section
-  class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 w-full"
+  class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 w-full bg-gray-800"
 >
-  <!-- Seção de Planos -->
   <div class="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
-    <h1 class="font-bold text-xl text-emerald-600 text-center">
+    <h1 class="font-bold text-3xl text-emerald-500 text-center">
       Chegou a hora de profissionalizar seu negócio!
     </h1>
-    <p class="flex flex-col text-md mb-4 text-center gap-2">
+    <p class="flex flex-col text-md mb-4 text-center gap-2 f text-white">
       Se você quer: <br />
       <span>📅 Receber agendamentos enquanto dorme</span>
       <span>✅ Reduzir faltas com lembretes automáticos</span>
       <span>📱 Organizar clientes e atendimentos em um só lugar</span>
       <span>💰 Dobrar seu faturamento com gestão inteligente</span>
     </p>
-    <p class="font-bold text-lg text-emerald-600 mb-4 text-center">
+    <p class="font-bold text-2xl text-emerald-500 mb-4 text-center">
       Escolha o melhor plano!
     </p>
-    {
-      plans.map((plan) => (
-        <article
-          class={`bg-gray-800 rounded-lg p-4 sm:p-6 flex flex-col shadow-lg relative ${plan.popular ? "ring-2 ring-emerald-500 ring-opacity-50 transform scale-105" : ""}`}
+    <!-- Card: Assinatura Trimestral (Popular) -->
+    <article
+      class="bg-gray-800 rounded-lg p-4 sm:p-6 flex flex-col shadow-lg relative ring-2 ring-emerald-500 ring-opacity-50 transform scale-105"
+    >
+      <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+        <span
+          class="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-4 py-1 rounded-full text-xs font-semibold shadow-lg animate-pulse"
         >
-          {plan.popular && (
-            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
-              <span class="bg-gradient-to-r from-emerald-500 to-emerald-600 text-white px-4 py-1 rounded-full text-xs font-semibold shadow-lg animate-pulse">
-                ⭐ Mais Popular
-              </span>
-            </div>
-          )}
-
-          <h3 class="text-lg sm:text-xl font-bold text-white mb-2">
-            {plan.name}
-          </h3>
-          <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">
-            {plan.description}
-          </p>
-
-          <div class="mb-3 sm:mb-4">
-            <div class="flex items-baseline">
-              <span class="text-2xl sm:text-3xl font-bold text-white">
-                {plan.price}
-              </span>
-              <span class="text-gray-400 ml-1 text-sm">{plan.period}</span>
-            </div>
-            {plan.installment && (
-              <div class="mt-2">
-                <span class="bg-emerald-900 text-emerald-300 px-2 py-1 rounded text-xs">
-                  {plan.installment}
-                </span>
-              </div>
-            )}
-          </div>
-
-          <a
-            href={plan.url}
-            data-fb-event={
-              plan.name === "Assinatura Mensal"
-                ? "PlanoMensalClicado"
-                : plan.name === "Assinatura Trimestral"
-                  ? "PlanoTrimestralClicado"
-                  : "PlanoSemestralClicado"
-            }
-            class={`mt-auto px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-colors text-center text-sm sm:text-base ${plan.popular ? "bg-gradient-to-r from-emerald-500 to-emerald-600 text-white hover:from-emerald-600 hover:to-emerald-700 shadow-lg" : "bg-emerald-500 text-white hover:bg-emerald-600"}`}
+          ⭐ MAIS POPULAR
+        </span>
+      </div>
+      <h3 class="text-lg sm:text-xl font-bold text-white mb-2">
+        Assinatura Trimestral
+      </h3>
+      <p class="text-gray-200 text-md sm:text-sm mb-3 sm:mb-4">
+        O favorito de quem já usa a iGenda!
+      </p>
+      <div class="mb-3 sm:mb-4">
+        <div class="flex items-baseline">
+          <span class="text-2xl sm:text-3xl font-bold text-white">
+            R$104,90
+          </span>
+          <span class="text-gray-400 ml-1 text-sm">/mês</span>
+        </div>
+        <div class="mt-2">
+          <span
+            class="bg-emerald-900 text-emerald-300 px-2 py-1 rounded text-xs"
           >
-            {plan.buttonText}
-          </a>
-        </article>
-      ))
-    }
+            Em até 3x de R$ 34,96
+          </span>
+        </div>
+      </div>
+      <a
+        href="https://pay.cakto.com.br/5aqjg9q_513522"
+        data-fb-event="PlanoTrimestralClicado"
+        class="mt-auto px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-colors text-center text-sm sm:text-base bg-gradient-to-r from-emerald-500 to-emerald-600 text-white hover:from-emerald-600 hover:to-emerald-700 shadow-lg"
+      >
+        Assinar agora
+      </a>
+    </article>
+
+    <!-- Card: Assinatura Mensal (Promoção) -->
+    <article
+      class="bg-gray-800 rounded-lg p-4 mt-3 sm:p-6 flex flex-col shadow-lg relative border border-rose-500"
+    >
+      <div class="absolute -top-3 left-3">
+        <span
+          class="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg"
+        >
+          🔥 Promoção 50% OFF
+        </span>
+      </div>
+      <h3 class="text-lg sm:text-xl font-bold text-white mb-2">
+        Assinatura Mensal
+      </h3>
+      <p class="text-gray-200 text-md sm:text-sm mb-3 sm:mb-4">
+        Mensal com 50% de desconto!
+      </p>
+      <div class="mb-3 sm:mb-4">
+        <div class="flex items-baseline">
+          <span class="text-2xl sm:text-3xl font-bold text-white">R$19,90</span>
+          <span class="text-gray-400 ml-1 text-sm">/mês</span>
+        </div>
+      </div>
+      <a
+        href="https://pay.cakto.com.br/ht897wv_511991"
+        data-fb-event="PlanoMensalClicado"
+        class="mt-auto px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-colors text-center text-sm sm:text-base bg-emerald-500 text-white hover:bg-emerald-600"
+      >
+        Assinar agora
+      </a>
+    </article>
+
+    <!-- Card: Assinatura Semestral -->
+    <article
+      class="bg-gray-800 rounded-lg p-4 sm:p-6 flex flex-col shadow-lg relative border border-gray-400"
+    >
+      <h3 class="text-lg sm:text-xl font-bold text-white mb-2">
+        Assinatura Semestral
+      </h3>
+      <p class="text-gray-200 text-md sm:text-sm mb-3 sm:mb-4">
+        Perfeito para quem quer organizar tudo e gastar pouco
+      </p>
+      <div class="mb-3 sm:mb-4">
+        <div class="flex items-baseline">
+          <span class="text-2xl sm:text-3xl font-bold text-white">R$179</span>
+          <span class="text-gray-400 ml-1 text-sm">/mês</span>
+        </div>
+        <div class="mt-2">
+          <span
+            class="bg-emerald-900 text-emerald-300 px-2 py-1 rounded text-xs"
+          >
+            Em até 6x de R$ 29,83
+          </span>
+        </div>
+      </div>
+      <a
+        href="https://pay.cakto.com.br/3cia8pm_513526"
+        data-fb-event="PlanoSemestralClicado"
+        class="mt-auto px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-colors text-center text-sm sm:text-base bg-emerald-500 text-white hover:bg-emerald-600"
+      >
+        Assinar agora
+      </a>
+    </article>
   </div>
 </section>
