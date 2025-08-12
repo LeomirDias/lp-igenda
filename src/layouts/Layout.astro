@@ -6,9 +6,24 @@ const pixelId = "1097411068422376";
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Meta tags para iPhone Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="iGenda" />
+
+    <!-- Meta tags para Android -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#000000" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -86,5 +101,23 @@ const pixelId = "1097411068422376";
     margin: 0;
     width: 100%;
     height: 100%;
+  }
+
+  /* Estilos para iPhone Safari com barra transparente */
+  @supports (padding: max(0px)) {
+    body {
+      padding-top: max(0px, env(safe-area-inset-top));
+      padding-bottom: max(0px, env(safe-area-inset-bottom));
+      padding-left: max(0px, env(safe-area-inset-left));
+      padding-right: max(0px, env(safe-area-inset-right));
+    }
+  }
+
+  /* Fallback para dispositivos que não suportam env() */
+  @supports not (padding: max(0px)) {
+    body {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
   }
 </style>
