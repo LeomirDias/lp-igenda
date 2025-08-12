@@ -1,4 +1,4 @@
-<div class="carouse">
+<div class="carousel">
   <div class="carousel__track">
     <!-- Bloco original -->
     <div class="carousel__item rounded-2xl flex flex-col items-center">
@@ -9,7 +9,7 @@
         loading="lazy"
       />
       <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
-        Estética Facial
+        Clínicas de estética facial
       </h2>
     </div>
     <div class="carousel__item rounded-2xl flex flex-col items-center">
@@ -20,7 +20,7 @@
         loading="lazy"
       />
       <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
-        Clinicas
+        Clinicas de saúde
       </h2>
     </div>
     <div class="carousel__item rounded-2xl flex flex-col items-center">
@@ -31,7 +31,7 @@
         loading="lazy"
       />
       <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
-        Pet Shop
+        Pet Shops
       </h2>
     </div>
     <div class="carousel__item rounded-2xl flex flex-col items-center">
@@ -43,7 +43,7 @@
       />
 
       <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
-        Estudio de Tatuagem
+        Estudios de Tatuagem
       </h2>
     </div>
     <div class="carousel__item rounded-2xl flex flex-col items-center">
@@ -54,7 +54,7 @@
         loading="lazy"
       />
       <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
-        Clínica Veterinária
+        Clínicas veterinária
       </h2>
     </div>
 
@@ -67,7 +67,7 @@
         loading="lazy"
       />
       <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
-        Estética Facial
+        Clínicas de estética facial
       </h2>
     </div>
     <div
@@ -82,7 +82,7 @@
       />
 
       <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
-        Clinicas
+        Clinicas de saúde
       </h2>
     </div>
     <div
@@ -96,7 +96,7 @@
         loading="lazy"
       />
       <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
-        Pet Shop
+        Pet Shops
       </h2>
     </div>
     <div
@@ -110,7 +110,7 @@
         loading="lazy"
       />
       <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
-        Estudio de Tatuagem
+        Estudios de tatuagem
       </h2>
     </div>
     <div
@@ -124,7 +124,7 @@
         loading="lazy"
       />
       <h2 class="text-xl text-emerald-600 font-bold text-center mt-4">
-        Clínica Veterinária
+        Clínicas veterinária
       </h2>
     </div>
   </div>
@@ -133,17 +133,39 @@
 <style>
   .carousel {
     overflow: hidden;
+    /* Suaviza as bordas para reduzir percepção do reset */
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 6%,
+      black 94%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 6%,
+      black 94%,
+      transparent
+    );
   }
 
   .carousel__track {
     display: flex;
     width: max-content;
     animation: carousel-scroll-two 20s linear infinite;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
   }
 
   .carousel__item {
     flex: 0 0 auto;
     width: 18rem;
+  }
+
+  .carousel__item img {
+    display: block;
   }
 
   @media (min-width: 640px) {
@@ -160,10 +182,10 @@
 
   @keyframes carousel-scroll-two {
     0% {
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
     100% {
-      transform: translateX(50%);
+      transform: translate3d(-50%, 0, 0);
     }
   }
 </style>
