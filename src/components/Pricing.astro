@@ -1,24 +1,18 @@
 ---
-const includedFeatures = [
-  "Cadastro de profissionais ilimitados",
-  "Agendamento via link para clientes",
-  "Métricas de agendamento, faturamento e mais",
-  "Cadastro de mensagens promocionais",
-  "Cadastro de clientes ilimitados",
-  "Link de agendamento personalizado",
-  "Integração com WhatsApp",
-  "Suporte via 24/7 via WhatsApp",
-  "Agendamentos ilimitados",
-  "Gestão de estoque de produtos e equipamentos",
-  "Mensagens automáticas para clientes",
-  "Acesso integral a todas as novidades e atualizações",
-];
-
 const plans = [
   {
+    name: "Assinatura Trimestral",
+    description: "O favorito de quem já usa a iGenda!",
+    price: "R$104,90",
+    period: "/mês",
+    installment: "Em até 3x de R$ 34,96",
+    buttonText: "Assinar agora",
+    url: "https://pay.cakto.com.br/5aqjg9q_513522",
+    popular: true,
+  },
+  {
     name: "Assinatura Mensal",
-    description:
-      "Para profissionais autônomos, pequenas, médias e grandes empresas.",
+    description: "Mensal com 50% de desconto!",
     price: "R$39,90",
     period: "/mês",
     installment: null,
@@ -27,26 +21,14 @@ const plans = [
     popular: false,
   },
   {
-    name: "Assinatura Trimestral",
-    description:
-      "Para profissionais autônomos, pequenas, médias e grandes empresas.",
-    price: "R$104,90",
-    period: "/mês",
-    installment: "Em até 3x de R$ 34,96",
-    buttonText: "Assinar agora",
-    url: "https://pay.cakto.com.br/5aqjg9q_513522",
-    popular: false,
-  },
-  {
     name: "Assinatura Semestral",
-    description:
-      "Para profissionais autônomos, pequenas, médias e grandes empresas.",
+    description: "Perfeito para quem quer organizar tudo e gastar pouco",
     price: "R$179",
     period: "/mês",
     installment: "Em até 6x de R$ 29,83",
     buttonText: "Assinar agora",
     url: "https://pay.cakto.com.br/3cia8pm_513526",
-    popular: true,
+    popular: false,
   },
 ];
 ---
@@ -54,37 +36,21 @@ const plans = [
 <section
   class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 w-full"
 >
-  <!-- Seção de Recursos Incluídos -->
-  <div class="mb-8 sm:mb-12 lg:mb-16">
-    <h2
-      class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center mb-8 sm:mb-12"
-    >
-      Todos os planos incluem:
-    </h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-      {
-        includedFeatures.map((feature) => (
-          <div class="bg-gray-800 rounded-lg p-3 sm:p-4 flex items-start sm:items-center">
-            <svg
-              class="w-4 sm:w-5 h-4 sm:h-5 text-emerald-500 mr-2 sm:mr-3 flex-shrink-0 mt-0.5 sm:mt-0"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"
-              />
-            </svg>
-            <span class="text-gray-300 text-xs sm:text-sm">{feature}</span>
-          </div>
-        ))
-      }
-    </div>
-  </div>
-
   <!-- Seção de Planos -->
   <div class="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <h1 class="font-bold text-xl text-emerald-600 text-center">
+      Chegou a hora de profissionalizar seu negócio!
+    </h1>
+    <p class="flex flex-col text-md mb-4 text-center gap-2">
+      Se você quer: <br />
+      <span>📅 Receber agendamentos enquanto dorme</span>
+      <span>✅ Reduzir faltas com lembretes automáticos</span>
+      <span>📱 Organizar clientes e atendimentos em um só lugar</span>
+      <span>💰 Dobrar seu faturamento com gestão inteligente</span>
+    </p>
+    <p class="font-bold text-lg text-emerald-600 mb-4 text-center">
+      Escolha o melhor plano!
+    </p>
     {
       plans.map((plan) => (
         <article
@@ -120,10 +86,6 @@ const plans = [
               </div>
             )}
           </div>
-
-          <p class="text-gray-400 text-xs mb-4 sm:mb-6">
-            Clique em "{plan.buttonText}" para escolher este plano
-          </p>
 
           <a
             href={plan.url}

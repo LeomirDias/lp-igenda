@@ -2,407 +2,101 @@
 // Componente Features.astro
 ---
 
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  <!-- Cards de Funcionalidades (4 colunas no desktop) -->
-  <div
-    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-6"
-  >
-    <!-- Profissionais -->
-    <div
-      class="bg-gray-800 rounded-lg p-3 sm:p-4 animate-fade-in animate-fade-in-delay-1"
-    >
-      <div
-        class="w-6 sm:w-8 h-6 sm:h-8 bg-green-500 rounded-full flex items-center justify-center mb-2 sm:mb-3"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="lucide lucide-user-star-icon lucide-user-star sm:w-5 sm:h-5"
-          ><path
-            d="M16.051 12.616a1 1 0 0 1 1.909.024l.737 1.452a1 1 0 0 0 .737.535l1.634.256a1 1 0 0 1 .588 1.806l-1.172 1.168a1 1 0 0 0-.282.866l.259 1.613a1 1 0 0 1-1.541 1.134l-1.465-.75a1 1 0 0 0-.912 0l-1.465.75a1 1 0 0 1-1.539-1.133l.258-1.613a1 1 0 0 0-.282-.866l-1.156-1.153a1 1 0 0 1 .572-1.822l1.633-.256a1 1 0 0 0 .737-.535z"
-          ></path><path d="M8 15H7a4 4 0 0 0-4 4v2"></path><circle
-            cx="10"
-            cy="7"
-            r="4"></circle></svg
-        >
-      </div>
-      <h4 class="text-xs sm:text-sm font-semibold text-white mb-1">
-        Profissionais
-      </h4>
-      <p class="text-xs text-gray-300">
-        Cadastre seus funcionários e gerencie os horários de disponibilidade de
-        cada um deles.
-      </p>
-    </div>
-
-    <!-- Serviços -->
-    <div
-      class="bg-gray-800 rounded-lg p-3 sm:p-4 animate-fade-in animate-fade-in-delay-1"
-    >
-      <div
-        class="w-6 sm:w-8 h-6 sm:h-8 bg-purple-500 rounded-full flex items-center justify-center mb-2 sm:mb-3"
-      >
-        <svg
-          class="w-3 sm:w-4 h-3 sm:h-4 text-white"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-            clip-rule="evenodd"></path>
-        </svg>
-      </div>
-      <h4 class="text-xs sm:text-sm font-semibold text-white mb-1">Serviços</h4>
-      <p class="text-xs text-gray-300">
-        Disponibilize para os seus clientes todos os serviços que você oferece.
-      </p>
-    </div>
-
-    <!-- Horários -->
-    <div
-      class="bg-gray-800 rounded-lg p-3 sm:p-4 animate-fade-in animate-fade-in-delay-1"
-    >
-      <div
-        class="w-6 sm:w-8 h-6 sm:h-8 bg-orange-500 rounded-full flex items-center justify-center mb-2 sm:mb-3"
-      >
-        <svg
-          class="w-3 sm:w-4 h-3 sm:h-4 text-white"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-            clip-rule="evenodd"></path>
-        </svg>
-      </div>
-      <h4 class="text-xs sm:text-sm font-semibold text-white mb-1">Horários</h4>
-      <p class="text-xs text-gray-300">
-        Sua agenda sempre disponível e acessivel para agendamento.
-      </p>
-    </div>
-
-    <!-- Na palma da mão -->
-    <div
-      class="bg-gray-800 rounded-lg p-3 sm:p-4 animate-fade-in animate-fade-in-delay-1"
-    >
-      <div
-        class="w-6 sm:w-8 h-6 sm:h-8 bg-blue-500 rounded-full flex items-center justify-center mb-2 sm:mb-3"
-      >
-        <svg
-          class="w-3 sm:w-4 h-3 sm:h-4 text-white"
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path
-            d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm0 2h8v12H6V4z"
-          ></path>
-        </svg>
-      </div>
-      <h4 class="text-xs sm:text-sm font-semibold text-white mb-1">
-        Na palma da mão
-      </h4>
-      <p class="text-xs text-gray-300">
-        Gerencie sua empresa de forma fácil e rápida.
-      </p>
-    </div>
-  </div>
-
-  <!-- Seção "Sua empresa" (largura total) -->
-  <div
-    class="bg-gray-800/30 rounded-xl p-4 sm:p-6 mb-6 animate-fade-in animate-fade-in-delay-2"
-  >
-    <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">
-      Sua empresa, seu jeito de atender.
+<div class="flex flex-col gap-4 px-4">
+  <!-- Relatórios -->
+  <div class="bg-gray-100 rounded-xl p-4 sm:p-6">
+    <h2 class="text-xl sm:text-2xl font-bold text-emerald-600 mb-2">
+      Relatórios completos
     </h2>
-    <p class="text-sm sm:text-base text-gray-300">
-      Configure o sistema de forma completa para atender às necessidades de seus
-      clientes e facilitar seu dia a dia.
+    <p class="text-sm sm:text-base mb-4">
+      Visualize seus dados mais importantes em um só lugar, com gráficos calros
+      e atualizados que facilitam a análise do seu desempenho financeiro e
+      operacional.
     </p>
+
+    <img
+      src="/DashDesktop.png"
+      alt="Demonstração da dashboard de relatórios iGenda"
+      class="w-90 sm:w-80 md:w-96 mx-auto rounded shadow-lg"
+      loading="lazy"
+    />
   </div>
 
-  <!-- Grid principal com Clientes e WhatsApp -->
-  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
-    <!-- Coluna da esquerda: Clientes e Relatórios -->
-    <div class="lg:col-span-2 space-y-4 sm:space-y-6">
-      <!-- Clientes -->
-      <div
-        class="bg-gray-800/30 rounded-xl p-4 sm:p-6 animate-fade-in animate-fade-in-delay-4"
-      >
-        <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">Clientes</h2>
-        <p class="text-sm sm:text-base text-gray-300 mb-4">
-          Gerencie seus clientes de forma eficiente e sem complicações.
-        </p>
+  <!-- Agenda inteligente -->
+  <div class="bg-gray-100 rounded-xl p-4 sm:p-6">
+    <h2 class="text-xl sm:text-2xl font-bold text-emerald-600 mb-2">
+      Agenda inteligente
+    </h2>
+    <p class="text-sm sm:text-base mb-4">
+      Organize seus atendimentos com praticidade e evite conflitos de horários,
+      mantendo sua rotina sob controle com uma agenda visual e fácil de usar.
+    </p>
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <!-- Cliente 1 -->
-          <div class="bg-gray-800 rounded-lg p-4">
-            <div class="flex items-center space-x-3 mb-3">
-              <div
-                class="w-10 h-10 bg-emerald-700 rounded-full flex items-center justify-center text-white font-semibold"
-              >
-                GG
-              </div>
-              <div>
-                <h4 class="text-sm font-semibold text-white">Giovana Gomes</h4>
-                <p class="text-xs text-gray-300">giovana@email.com</p>
-              </div>
-            </div>
-            <div class="space-y-1">
-              <p class="text-xs text-gray-300">(11) 66666-6666</p>
-              <p class="text-xs text-gray-300">6 agendamentos</p>
-            </div>
-          </div>
+    <img
+      src="/AgendaDesktop.png"
+      alt="Demonstração da dashboard de relatórios iGenda"
+      class="w-90 sm:w-80 md:w-96 mx-auto rounded shadow-lg"
+      loading="lazy"
+    />
+  </div>
 
-          <!-- Cliente 2 -->
-          <div class="bg-gray-800 rounded-lg p-4">
-            <div class="flex items-center space-x-3 mb-3">
-              <div
-                class="w-10 h-10 bg-emerald-700 rounded-full flex items-center justify-center text-white font-semibold"
-              >
-                LF
-              </div>
-              <div>
-                <h4 class="text-sm font-semibold text-white">Laura Ferreira</h4>
-                <p class="text-xs text-gray-300">laura@email.com</p>
-              </div>
-            </div>
-            <div class="space-y-1">
-              <p class="text-xs text-gray-300">(11) 55555-5555</p>
-              <p class="text-xs text-gray-300">22 agendamentos</p>
-            </div>
-          </div>
+  <!-- Gerenciamento de cliente -->
+  <div class="bg-gray-100 rounded-xl p-4 sm:p-6">
+    <h2 class="text-xl sm:text-2xl font-bold text-emerald-600 mb-2">
+      Gerenciamento de clientes
+    </h2>
+    <p class="text-sm sm:text-base mb-4">
+      Mantenha todos os dados dos seus clientes organizados e sempre à mão. <br
+      />
+      Acompanhe o histórico de atendimentos, preferências e informações de contato
+      em um só lugar, facilitandoo relacionamento e garantindo um atendimento personalizado.
+    </p>
 
-          <!-- Cliente 3 -->
-          <div class="bg-gray-800 rounded-lg p-4">
-            <div class="flex items-center space-x-3 mb-3">
-              <div
-                class="w-10 h-10 bg-emerald-700 rounded-full flex items-center justify-center text-white font-semibold"
-              >
-                FL
-              </div>
-              <div>
-                <h4 class="text-sm font-semibold text-white">Fernanda Lima</h4>
-                <p class="text-xs text-gray-300">fernanda@email.com</p>
-              </div>
-            </div>
-            <div class="space-y-1">
-              <p class="text-xs text-gray-300">(11) 99999-9999</p>
-              <p class="text-xs text-gray-300">12 agendamentos</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <img
+      src="/ClientesDesktop.png"
+      alt="Demonstração da dashboard de relatórios iGenda"
+      class="w-90 sm:w-80 md:w-96 mx-auto rounded shadow-lg"
+      loading="lazy"
+    />
+  </div>
 
-      <!-- Relatórios -->
-      <div
-        class="bg-gray-800/30 rounded-xl p-4 sm:p-6 animate-fade-in animate-fade-in-delay-5"
-      >
-        <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">
-          Relatórios
-        </h2>
-        <p class="text-sm sm:text-base text-gray-300 mb-4">
-          Veja gráficos animados de suas métricas de negócio.
-        </p>
+  <!-- Integração inteligente com WhatsApp -->
+  <div class="bg-gray-100 rounded-xl p-4 sm:p-6">
+    <h2 class="text-xl sm:text-2xl font-bold text-emerald-600 mb-2">
+      Integração inteligente com WhatsAp
+    </h2>
+    <p class="text-sm sm:text-base mb-4">
+      Envio automático de confirmações, lembretes e mensagens personalizadas. <br
+      />
+      Respostas rápidas e organizadas para agilizar seu atendimento. Mais proximidade
+      e profissionalismo na comunicação com seus clientes.
+    </p>
 
-        <div class="relative h-48 bg-gray-800 rounded-lg p-4">
-          <!-- Gráfico -->
-          <div class="absolute inset-4">
-            <svg class="w-full h-full" viewBox="0 0 200 100">
-              <!-- Grid lines -->
-              <line
-                x1="0"
-                y1="20"
-                x2="200"
-                y2="20"
-                stroke="#374151"
-                stroke-width="0.5"></line>
-              <line
-                x1="0"
-                y1="40"
-                x2="200"
-                y2="40"
-                stroke="#374151"
-                stroke-width="0.5"></line>
-              <line
-                x1="0"
-                y1="60"
-                x2="200"
-                y2="60"
-                stroke="#374151"
-                stroke-width="0.5"></line>
-              <line
-                x1="0"
-                y1="80"
-                x2="200"
-                y2="80"
-                stroke="#374151"
-                stroke-width="0.5"></line>
+    <!-- <img
+      src="/WppMockup.png"
+      alt="Demonstração da dashboard de relatórios iGenda"
+      class="w-60 sm:w-80 md:w-96 mx-auto"
+      loading="lazy"
+    /> -->
+  </div>
 
-              <!-- Y-axis labels -->
-              <text x="5" y="15" fill="#9CA3AF" font-size="8">1500</text>
-              <text x="5" y="35" fill="#9CA3AF" font-size="8">1000</text>
-              <text x="5" y="55" fill="#9CA3AF" font-size="8">500</text>
+  <!-- Link de agendamento personalizado -->
+  <div class="bg-gray-100 rounded-xl p-4 sm:p-6">
+    <h2 class="text-xl sm:text-2xl font-bold text-emerald-600 mb-2">
+      Link de agendamento personalizado
+    </h2>
+    <p class="text-sm sm:text-base mb-4">
+      Compartilhe seu link único para que clientes escolham o horário que
+      preferirem. <br />
+      Agendamentos confirmados automáticamente sem trocas de mensagens desnecessárias,
+      mais praticidade para você e conveniência para seus clientes.
+    </p>
 
-              <!-- Line chart -->
-              <path
-                d="M20 80 L40 60 L60 40 L80 30 L100 20 L120 25 L140 35 L160 45 L180 55"
-                stroke="#10B981"
-                stroke-width="2"
-                fill="none"></path>
-
-              <!-- Data points -->
-              <circle cx="20" cy="80" r="2" fill="#10B981"></circle>
-              <circle cx="40" cy="60" r="2" fill="#10B981"></circle>
-              <circle cx="60" cy="40" r="2" fill="#10B981"></circle>
-              <circle cx="80" cy="30" r="2" fill="#10B981"></circle>
-              <circle cx="100" cy="20" r="2" fill="#10B981"></circle>
-              <circle cx="120" cy="25" r="2" fill="#10B981"></circle>
-              <circle cx="140" cy="35" r="2" fill="#10B981"></circle>
-              <circle cx="160" cy="45" r="2" fill="#10B981"></circle>
-              <circle cx="180" cy="55" r="2" fill="#10B981"></circle>
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Coluna da direita: WhatsApp -->
-    <div
-      class="bg-gray-800/30 rounded-xl p-4 sm:p-6 animate-fade-in animate-fade-in-delay-3"
-    >
-      <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">
-        Integração com WhatsApp
-      </h2>
-      <p class="text-sm sm:text-base text-gray-300 mb-4">
-        Comunique-se com seu cliente de forma automátizada e eficiente.
-      </p>
-
-      <div class="space-y-3">
-        <!-- Notificação 1 -->
-        <div
-          class="flex items-center justify-between p-3 bg-gray-800 rounded-lg"
-        >
-          <div class="flex items-center space-x-3">
-            <div
-              class="w-6 sm:w-8 h-6 sm:h-8 bg-green-500 rounded-full flex items-center justify-center"
-            >
-              <svg
-                class="w-3 sm:w-4 h-3 sm:h-4 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </div>
-            <div>
-              <p class="text-xs sm:text-sm font-semibold text-white">
-                Agendamento confirmado
-              </p>
-              <p class="text-xs text-gray-300">Carla Souza</p>
-            </div>
-          </div>
-          <span class="text-xs text-gray-400">5m ago</span>
-        </div>
-
-        <!-- Notificação 2 -->
-        <div
-          class="flex items-center justify-between p-3 bg-gray-800 rounded-lg"
-        >
-          <div class="flex items-center space-x-3">
-            <div
-              class="w-6 sm:w-8 h-6 sm:h-8 bg-blue-500 rounded-full flex items-center justify-center"
-            >
-              <svg
-                class="w-3 sm:w-4 h-3 sm:h-4 text-white"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"
-                ></path>
-              </svg>
-            </div>
-            <div>
-              <p class="text-xs sm:text-sm font-semibold text-white">
-                Novo cliente registrado
-              </p>
-              <p class="text-xs text-gray-300">Marcela Gomes</p>
-            </div>
-          </div>
-          <span class="text-xs text-gray-400">2m ago</span>
-        </div>
-
-        <!-- Notificação 3 -->
-        <div
-          class="flex items-center justify-between p-3 bg-gray-800 rounded-lg opacity-50"
-        >
-          <div class="flex items-center space-x-3">
-            <div
-              class="w-6 sm:w-8 h-6 sm:h-8 bg-gray-500 rounded-full flex items-center justify-center"
-            >
-              <svg
-                class="w-3 sm:w-4 h-3 sm:h-4 text-gray-300"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"
-                ></path>
-              </svg>
-            </div>
-            <div>
-              <p class="text-sm font-semibold text-gray-400">
-                Agendamento cancelado
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <img
+      src="/LinkMockup.png"
+      alt="Demonstração da dashboard de relatórios iGenda"
+      class="w-60 sm:w-80 md:w-96 mx-auto"
+      loading="lazy"
+    />
   </div>
 </div>
-
-<style>
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in {
-    animation: fadeIn 0.6s ease-out;
-  }
-
-  .animate-fade-in-delay-1 {
-    animation-delay: 0.1s;
-  }
-  .animate-fade-in-delay-2 {
-    animation-delay: 0.2s;
-  }
-  .animate-fade-in-delay-3 {
-    animation-delay: 0.3s;
-  }
-  .animate-fade-in-delay-4 {
-    animation-delay: 0.4s;
-  }
-  .animate-fade-in-delay-5 {
-    animation-delay: 0.5s;
-  }
-</style>
