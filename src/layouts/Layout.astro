@@ -88,6 +88,13 @@ const pixelId = "1097411068422376";
 
     <!-- Smooth Scroll for internal anchors -->
     <script src="/scroll.js" defer></script>
+
+    <!-- Pré-carregamento de imagens -->
+    <script>
+      import { preloadImages } from "../scripts/preload-images.js";
+      // Pré-carregar imagens quando a página carregar
+      window.addEventListener("load", preloadImages);
+    </script>
   </body>
 </html>
 
