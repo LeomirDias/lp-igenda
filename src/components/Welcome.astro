@@ -1,10 +1,21 @@
 <section
-  class="text-center bg-gradient-to-tr from-black via-black to-[#1c6704] flex flex-col border-none items-center pt-2 justify-center max-w-6xl mx-auto px-4"
+  class="text-center bg-gradient-to-tr from-black via-black to-[#1c6704] flex flex-col border-none items-center pt-4 justify-center max-w-6xl mx-auto px-4"
 >
+  <div
+    class="bg-red-600 text-white font-extrabold py-4 w-full text-center rounded-lg"
+  >
+    <div class="max-w-6xl mx-auto px-4">
+      <p class="mb-2">🔥😱 SÓ HOJE - ATÉ 60% DE DESCONTO</p>
+      <p class="text-md bg-white text-red-600 rounded-lg p-1">
+        ⏰ Termina em: <span id="countdown" class="">--:--:--</span>
+      </p>
+    </div>
+  </div>
+
   <img
     src="/LogoiGenda.png"
     alt="Logo iGenda"
-    class="w-20 mb-4"
+    class="w-20 mb-4 mt-4"
     loading="lazy"
   />
 
@@ -63,4 +74,35 @@
     class="lucide lucide-arrow-down-icon lucide-arrow-down my-8 text-white font-extrabold"
     ><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg
   >
+
+  <script>
+    function updateCountdown() {
+      const now = new Date();
+      const endOfDay = new Date();
+      endOfDay.setHours(23, 59, 59, 999);
+
+      const timeLeft = endOfDay.getTime() - now.getTime();
+
+      if (timeLeft > 0) {
+        const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+        const countdownElement = document.getElementById("countdown");
+        if (countdownElement) {
+          countdownElement.textContent = `${hours.toString().padStart(2, "0")}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+        }
+      } else {
+        // Se já passou do fim do dia, mostra 00:00:00
+        const countdownElement = document.getElementById("countdown");
+        if (countdownElement) {
+          countdownElement.textContent = "00:00:00";
+        }
+      }
+    }
+
+    // Atualiza o contador a cada segundo
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
 </section>
