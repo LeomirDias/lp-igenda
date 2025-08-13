@@ -25,6 +25,38 @@ section {
     /* Compensa o header fixo */
 }
 
+/* Remove bordas e linhas de separação entre componentes */
+main>*,
+section>* {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove bordas específicas que possam estar sendo aplicadas */
+div[class*="border"],
+div[class*="outline"] {
+    border: none !important;
+    outline: none !important;
+}
+
+/* Remove linhas de separação entre componentes específicos */
+.Welcome,
+.Features,
+.Segments,
+.SegmentsTwo,
+.Pricing,
+.Testimonials {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove qualquer borda que possa estar sendo aplicada por padrão */
+* {
+    border-image: none !important;
+}
+
 /* Estilos específicos para o nav flutuante */
 header {
     backdrop-filter: blur(10px);
