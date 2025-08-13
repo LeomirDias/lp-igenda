@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { initPixelTracking } from "../config/pixel.js";
 const pixelId = "1097411068422376";
 ---
 
@@ -76,19 +77,14 @@ const pixelId = "1097411068422376";
     >
     <!-- End Facebook Pixel Code (noscript) -->
 
-    <!-- Facebook Pixel Event Tracking -->
-    <script is:inline>
-      window.addEventListener("load", function () {
-        document.querySelectorAll("button, a[data-fb-event]").forEach((el) => {
-          el.addEventListener("click", () => {
-            const label = el.getAttribute("data-fb-event") || "BotaoClicado";
-            fbq("trackCustom", label);
-            console.log("Evento FB enviado:", label);
-          });
-        });
-      });
+    <!-- Facebook Pixel Event Tracking - VERSÃO SIMPLIFICADA -->
+    <script>
+      // Importar e inicializar o rastreamento do pixel
+      import { initPixelTracking } from "../config/pixel.js";
+
+      // Inicializar quando a página carregar
+      window.addEventListener("load", initPixelTracking);
     </script>
-    <!-- End Facebook Pixel Event Tracking -->
 
     <!-- Smooth Scroll for internal anchors -->
     <script src="/scroll.js" defer></script>

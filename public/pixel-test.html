@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teste Pixel Facebook - iGenda</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+      }
+      .test-button {
+        background: #1877f2;
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 8px;
+        margin: 10px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      .test-button:hover {
+        background: #166fe5;
+      }
+      .status {
+        background: #f0f0f0;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+        font-family: monospace;
+      }
+      .success {
+        color: #28a745;
+      }
+      .error {
+        color: #dc3545;
+      }
+      .warning {
+        color: #ffc107;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🧪 Teste do Pixel Facebook - iGenda</h1>
+
+    <div class="status">
+      <h3>Status do Pixel:</h3>
+      <div id="pixel-status">Carregando...</div>
+    </div>
+
+    <h3>Teste de Eventos:</h3>
+    <button class="test-button" data-fb-event="TesteBotaoClicado">
+      Teste Botão Clicado
+    </button>
+
+    <button class="test-button" data-fb-event="TestePlanoMensal">
+      Teste Plano Mensal
+    </button>
+
+    <button class="test-button" onclick="testManualEvent()">
+      Teste Manual (Lead)
+    </button>
+
+    <button class="test-button" onclick="testPageView()">Teste PageView</button>
+
+    <div class="status">
+      <h3>Log de Eventos:</h3>
+      <div id="event-log"></div>
+    </div>
+
+    <script>
+      // Função para log de eventos
+      function logEvent(message, type = "info") {
+        const log = document.getElementById("event-log");
+        const timestamp = new Date().toLocaleTimeString();
+        const className =
+          type === "success"
+            ? "success"
+            : type === "error"
+            ? "error"
+            : "warning";
+
+        log.innerHTML += `<div class="${className}">[${timestamp}] ${message}</div>`;
+        log.scrollTop = log.scrollHeight;
+      }
+
+      // Função para verificar status do pixel
+      function checkPixelStatus() {
+        const statusDiv = document.getElementById("pixel-status");
+
+        if (window.fbq && window.fbq.loaded) {
+          statusDiv.innerHTML =
+            '<span class="success">✅ Pixel carregado e funcionando!</span>';
+          logEvent("Pixel Facebook carregado com sucesso!", "success");
+        } else if (window.fbq) {
+          statusDiv.innerHTML =
+            '<span class="warning">⚠️ Pixel carregando...</span>';
+          logEvent("Pixel Facebook carregando...", "warning");
+        } else {
+          statusDiv.innerHTML =
+            '<span class="error">❌ Pixel não encontrado!</span>';
+          logEvent("Pixel Facebook não encontrado!", "error");
+        }
+      }
+
+      // Teste manual de evento
+      function testManualEvent() {
+        if (window.fbq && window.fbq.loaded) {
+          try {
+            fbq("track", "Lead", { test: true });
+            logEvent("Evento Lead enviado manualmente", "success");
+          } catch (error) {
+            logEvent("Erro ao enviar evento manual: " + error.message, "error");
+          }
+        } else {
+          logEvent("Pixel não está carregado ainda", "error");
+        }
+      }
+
+      // Teste de PageView
+      function testPageView() {
+        if (window.fbq && window.fbq.loaded) {
+          try {
+            fbq("track", "PageView");
+            logEvent("Evento PageView enviado", "success");
+          } catch (error) {
+            logEvent("Erro ao enviar PageView: " + error.message, "error");
+          }
+        } else {
+          logEvent("Pixel não está carregado ainda", "error");
+        }
+      }
+
+      // Verificar status a cada segundo
+      setInterval(checkPixelStatus, 1000);
+
+      // Verificação inicial
+      checkPixelStatus();
+
+      // Log de eventos automáticos
+      document.addEventListener("DOMContentLoaded", () => {
+        logEvent("Página carregada", "info");
+      });
+    </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "1097411068422376");
+      fbq("track", "PageView");
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=1097411068422376&ev=PageView&noscript=1"
+      />
+    </noscript>
+
+    <!-- Event Tracking -->
+    <script>
+      window.addEventListener("load", function () {
+        document.querySelectorAll("[data-fb-event]").forEach((el) => {
+          el.addEventListener("click", () => {
+            const eventName = el.getAttribute("data-fb-event");
+
+            if (window.fbq && window.fbq.loaded) {
+              try {
+                fbq("track", "CustomEvent", {
+                  event_name: eventName,
+                  test: true,
+                });
+                logEvent(
+                  `Evento personalizado enviado: ${eventName}`,
+                  "success"
+                );
+              } catch (error) {
+                logEvent(`Erro ao enviar evento: ${error.message}`, "error");
+              }
+            } else {
+              logEvent("Pixel não está carregado ainda", "error");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
