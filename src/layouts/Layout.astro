@@ -31,6 +31,7 @@ const pixelId = "1097411068422376";
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
+
     <title>iGenda - Sua agenda inteligente</title>
 
     <!-- Facebook Pixel Code -->
@@ -63,6 +64,7 @@ const pixelId = "1097411068422376";
     </script>
     <!-- End Facebook Pixel Code -->
   </head>
+
   <body>
     <slot />
 
@@ -88,39 +90,5 @@ const pixelId = "1097411068422376";
 
     <!-- Smooth Scroll for internal anchors -->
     <script src="/scroll.js" defer></script>
-
-    <!-- Pré-carregamento de imagens -->
-    <script>
-      import { preloadImages } from "../scripts/preload-images.js";
-      // Pré-carregar imagens quando a página carregar
-      window.addEventListener("load", preloadImages);
-    </script>
   </body>
 </html>
-
-<style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  /* Estilos para iPhone Safari com barra transparente */
-  @supports (padding: max(0px)) {
-    body {
-      padding-top: max(0px, env(safe-area-inset-top));
-      padding-bottom: max(0px, env(safe-area-inset-bottom));
-      padding-left: max(0px, env(safe-area-inset-left));
-      padding-right: max(0px, env(safe-area-inset-right));
-    }
-  }
-
-  /* Fallback para dispositivos que não suportam env() */
-  @supports not (padding: max(0px)) {
-    body {
-      padding-top: 20px;
-      padding-bottom: 20px;
-    }
-  }
-</style>

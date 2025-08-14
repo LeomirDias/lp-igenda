@@ -1,9 +1,7 @@
-<section
-  class="text-center bg-gradient-to-tr from-black via-black to-[#1c6704] flex flex-col border-none items-center pt-4 justify-center max-w-6xl mx-auto px-4"
+<div
+  class="bg-gradient-to-tr from-black via-black to-[#1c6704] flex flex-col items-center justify-center text-center gap-1 border-transparent relative overflow-hidden"
 >
-  <div
-    class="bg-red-600 text-white font-extrabold py-4 w-full text-center rounded-lg"
-  >
+  <div class="bg-red-600 text-white font-extrabold py-4 w-full text-center">
     <div class="max-w-6xl mx-auto px-4">
       <p class="mb-2">🔥😱 SÓ HOJE - ATÉ 60% DE DESCONTO</p>
       <p class="text-md bg-white text-red-600 rounded-lg p-1">
@@ -25,11 +23,15 @@
     recupere seus cliente e mantenha sua agenda sempre cheia.
   </p>
 
-  <img
-    src="/MockupiGenda.webp"
-    alt="Demonstração do iGenda"
-    class="w-100 sm:w-80 md:w-96 mx-auto sm:mb-8"
-  />
+  <video
+    src="/DemoiGenda.mp4"
+    loop
+    playsinline
+    controls
+    class="w-full sm:w-80 md:w-[500px] lg:w-[600px] xl:w-[1000px] px-4 rounded-xl sm:mb-8 shadow-lg"
+    poster="/MockupiGenda.webp"
+  >
+  </video>
 
   <div class="flex flex-col gap-1 items-center mb-4">
     <h2 class="text-lg text-white mb-2">
@@ -60,7 +62,7 @@
     stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
-    class="lucide lucide-arrow-down-icon lucide-arrow-down my-8 text-white font-extrabold"
+    class="lucide lucide-arrow-down-icon lucide-arrow-down mb-10 text-white font-extrabold"
     ><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"></path></svg
   >
 
@@ -94,4 +96,4 @@
     updateCountdown();
     setInterval(updateCountdown, 1000);
   </script>
-</section>
+</div>

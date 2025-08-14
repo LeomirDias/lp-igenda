@@ -6,25 +6,22 @@ import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
 import Segments from "../components/Segments.astro";
 import SegmentsTwo from "../components/SegmentsTwo.astro";
+import FeaturesMockpus from "../components/FeaturesMockpus.astro";
 ---
 
 <Layout>
   <main class="scroll-smooth">
-    <section
-      id="home"
-      class="min-h-screen flex flex-col items-center justify-center"
+    <Welcome />
+    <FeaturesMockpus />
+    <Features />
+    <Segments />
+    <SegmentsTwo />
+    <Pricing />
+    <Testimonials />
+    <footer
+      class="py-8 text-center text-xs sm:text-sm text-gray-800 w-full px-4"
     >
-      <Welcome />
-      <Features />
-      <Segments />
-      <SegmentsTwo />
-      <Pricing />
-      <Testimonials />
-      <footer
-        class="py-8 text-center text-xs sm:text-sm text-white bg-black w-full px-4"
-      >
-        © 2025 iGenda. Todos os direitos reservados.
-      </footer>
-    </section>
+      © 2025 iGenda. Todos os direitos reservados.
+    </footer>
   </main>
 </Layout>
